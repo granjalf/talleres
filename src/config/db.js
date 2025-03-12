@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
-dotenv.config(); // Cargar variables de entorno desde .env
+dotenv.config(); // Carga las variables de entorno
 
 const connectDB = async () => {
   try {
@@ -9,11 +9,10 @@ const connectDB = async () => {
       useNewUrlParser: true,
       useUnifiedTopology: true
     });
-
-    console.log("MongoDB conectado exitosamente");
+    console.log("✅ MongoDB conectado exitosamente");
   } catch (error) {
-    console.error("Error al conectar a MongoDB:", error);
-    process.exit(1); // Detiene la ejecución si no se puede conectar
+    console.error("❌ Error al conectar a MongoDB:", error);
+    process.exit(1); // Detiene la ejecución si hay error
   }
 };
 
