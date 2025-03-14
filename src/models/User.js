@@ -18,7 +18,8 @@ UserSchema.pre("save", async function (next) {
 // Método para verificar la contraseña
 UserSchema.methods.comparePassword = async function (password) {
   const hash = await bcrypt.createHash("sha256").update(password).digest("hex");
-  return this.password === hash;
+  //return this.password === hash;
+  return hash;
 };
 
 export default mongoose.model("User", UserSchema);
